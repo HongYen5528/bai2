@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thời khóa biểu</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>THỜI KHÓA BIỂU</h1>
-  <table>
-    <tr><th>Thứ</th><th>Tiết 1</th><th>Tiết 2</th><th>Tiết 3</th></tr>
-    <tr><td>Thứ 2</td><td>Toán</td><td>Tin học</td><td>Tiếng Anh</td></tr>
-    <tr><td>Thứ 3</td><td>Ngữ văn</td><td>Toán</td><td>Lịch sử</td></tr>
-    <tr><td>Thứ 4</td><td>Tin học</td><td>Ngữ văn</td><td>Toán</td></tr>
-    <tr><td>Thứ 5</td><td>Tiếng Anh</td><td>Địa lý</td><td>Toán</td></tr>
-  </table>
-</body>
-</html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kiểm tra chẵn lẻ</title>
+<style>
+body{font-family:Arial;background:#eff6ff;display:grid;place-items:center;min-height:100vh;margin:0}
+main{background:white;padding:30px;border-radius:16px;width:min(360px,85vw);text-align:center;box-shadow:0 8px 25px #0001}
+input,button{padding:12px;font-size:16px;border-radius:8px;width:100%;box-sizing:border-box;margin-top:12px}
+input{border:1px solid #cbd5e1}button{background:#0d9488;color:white;border:0;cursor:pointer}#result{font-weight:bold;color:#0f766e}
+</style></head><body><main><h1>Kiểm tra số chẵn / lẻ</h1>
+<p>Nhập một số nguyên bất kỳ:</p><input id="number" type="number" step="1" placeholder="Ví dụ: 12">
+<button onclick="checkNumber()">Kiểm tra</button><p id="result"></p></main>
+<script>
+function checkNumber(){
+ const value=document.getElementById('number').value;
+ const result=document.getElementById('result');
+ if(value.trim()===''){result.textContent='Bạn chưa nhập số.';return;}
+ const number=Number(value);
+ if(!Number.isInteger(number)){result.textContent='Vui lòng nhập số nguyên.';return;}
+ result.textContent=number%2===0?number+' là số chẵn.':number+' là số lẻ.';
+}
+</script></body></html>
